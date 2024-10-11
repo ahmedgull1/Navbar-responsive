@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Responsive</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        .green {
+            background: green;
+        }
+
+        .button {
+            background-color: rgb(228, 27, 151);
+        }
+
+        :hover.button {
+            background-color: #6E2777;
+        }
+
+        .ul2 {
+            position: relative;
+            background-color: #2c2d3ff5;
+            z-index: -10;
+            transition-duration: 3s;
+        }
+
+        .li {
+            position: relative;
+            font-family: "Barlow", sans-serif;
+        }
+
+        .li::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 0%;
+            height: 4px;
+            padding-top: 0px;
+            background-color: red;
+            transition-duration: 0.5s;
+        }
+
+        .li:hover::before {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class=" text-center bg-gray-100  border w-full flex justify-around">
+
+        <div class="flex justify-around  w-full sm:w-28 md:w-32 lg:w-60 ">
+            <img class="w-28 h-14 mt-2" src="https://www.vvorkcloud.com/assets/img/VvorkLogo.png" alt="">
+            <button class="bto boder h-10 mt-3 px-2 block sm:hidden  md:hidden lg:hidden ">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <ul
+            class="ul flex pt-0  align-center justify-center h-20 gap-5 justify-between hidden sm:flex md:flex lg:flex list-none   ">
+            <li class="li  pt-6  cursor-pointer  hover:text-pink-500 ">Home</li>
+            <li class="li  pt-6  cursor-pointer  hover:text-pink-500 ">Successfull Stories</li>
+            <li class="li  pt-6  cursor-pointer  hover:text-pink-500 ">Course Outline</li>
+            <li class="li  pt-6  cursor-pointer  hover:text-pink-500 ">About Us</li>
+        </ul>
+
+        <button id="btn" class=" button text-white h-12 px-6 mt-2 rounded-2xl font-bold hidden  lg:block">Contact
+            Us</button>
+    </div>
+
+    <ul id="ul2" class="ul2 w-[400px] mx-auto h-0  rounded-md px-5 -mt-[125px]"></ul>
+
+
+    <div class="group w-full flex justify-center items-center h-screen">
+        <h1 class="w-[600px] mx-auto text-6xl text-white  text-center animate-bounce animate-color-change">
+          W e l c o m e 
+        </h1>
+      </div>
+      
+
+    <script>
+
+        let myul = document.querySelector('.ul')
+        let myul2 = document.querySelector('#ul2')
+        let button = document.querySelector('.bto')
+
+        let li2 = ['Home', 'Successfull Stories', 'Cours Outline', 'About Us']
+        li2.map((ele) => {
+            myul2.innerHTML += `<li class="pt-2 text-white font-sans-serif cursor-pointer">${ele}</li>
+            `
+        })
+        
+        button.onclick = () => {
+            myul2.classList.toggle("h-36")
+            myul2.classList.toggle("py-2")
+            myul2.classList.toggle("mt-0")
+        }
+
+    </script>
+</body>
+
+</html>

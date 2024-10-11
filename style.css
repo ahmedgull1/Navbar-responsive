@@ -1,0 +1,115 @@
+.bg{
+    width: 100%;
+    height: 700px;
+    background: url(./bg-2.jpg);
+    background-size: 100% 100%;
+
+}
+
+.bg{
+    position: relative;
+    }
+
+.saidbar{
+position: absolute;
+right:0px;
+transition-duration: 2s;
+position: fixed;
+z-index: 100000;
+background-color: rgba(0, 0, 0, 0.836);
+
+
+}
+.card{
+    position: relative;
+    overflow: hidden;
+    
+    
+    }
+
+.card::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #55E6F6;
+    top: 100%;
+    z-index: -1;
+    transition-duration: 1s;
+
+}
+.card:hover::after{
+    top: 0%;
+
+}
+
+
+.button{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+}
+.button:hover{
+    color: white;
+}
+.button::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: 50%;
+    top: 0%;
+    transition-duration: 1s;
+    z-index: -1;
+}
+
+.button:hover::before{
+    background-color: black;
+    width: 50%;
+    left: 0%;
+}
+
+.button::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    right: 50%;
+    z-index: -1;    
+
+    top: 0%;
+    transition-duration: 1s;
+    background-color: black;
+    
+}
+
+.button:hover::after{
+    width: 50%;
+   right: 0%;
+}
+
+
+
+@keyframes color-change {
+    0% {
+      color: red;
+    }
+    25% {
+      color: blue;
+    }
+    50% {
+      color: green;
+    }
+    75% {
+      color: orange;
+    }
+    100% {
+      color: red;
+    }
+  }
+  
+  .animate-color-change {
+    animation: color-change 3s infinite;
+  }
+  
